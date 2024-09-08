@@ -7,6 +7,10 @@ phases:
       - sudo apt-get update
       - sudo apt-get install nginx -y
 
+  pre_build:
+    commands:
+      - echo "pre-build started"
+
   build:
     commands:
       - echo "build started on"
@@ -16,6 +20,6 @@ phases:
     commands:
       - echo "configuring nginx"
 
-  artifacts:
-    files:
+artifacts:
+  files:
     - /var/www/html/index.html
